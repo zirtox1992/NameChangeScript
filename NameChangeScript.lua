@@ -21,6 +21,16 @@ local function eventHandler(self, event, ...)
 		end
 	end
 	TFNC:SetScript("OnUpdate", ChangeTargetName)
+	
+	-- Change Target's Target UnitFrame Name
+	TFTNC = CreateFrame("Frame", "TargetFrameTargetNameChange")
+	local function ChangeTargetofTargetName(self)
+		local TTN = GetUnitName("targettarget")
+		if PN == TTN then
+			TargetFrameTargetofTarget.name:SetText(NewName)
+		end
+	end
+	TFTNC:SetScript("OnUpdate", ChangeTargetofTargetName)
 		
 end
 frame:SetScript("OnEvent", eventHandler)
