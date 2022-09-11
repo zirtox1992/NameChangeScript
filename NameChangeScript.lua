@@ -3,7 +3,9 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 local function eventHandler(self, event, ...)
 
 	-- Put new name here
-	NewName = "YOURNEWNAMEHERE"
+	NewName = "Trckster"
+	
+	PN = GetUnitName("player")
 	
 	-- Change Player UnitFrame
 	local function ChangePlayerName(self)
@@ -26,11 +28,12 @@ local function eventHandler(self, event, ...)
 	TFTNC = CreateFrame("Frame", "TargetFrameTargetNameChange")
 	local function ChangeTargetofTargetName(self)
 		local TTN = GetUnitName("targettarget")
+		-- if target's target is you
 		if PN == TTN then
 			TargetofTargetFrame.name:SetText(NewName)
 		end
 	end
 	TFTNC:SetScript("OnUpdate", ChangeTargetofTargetName)
-		
+	
 end
 frame:SetScript("OnEvent", eventHandler)
