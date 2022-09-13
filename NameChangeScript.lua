@@ -3,7 +3,7 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 local function eventHandler(self, event, ...)
 
 	-- Put new name here
-	NewName = "Trckster"
+	NewName = "YOURNAMEHERE"
 	
 	PN = GetUnitName("player")
 	
